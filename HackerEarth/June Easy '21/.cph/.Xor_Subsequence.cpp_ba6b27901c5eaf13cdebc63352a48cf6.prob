@@ -1,0 +1,1 @@
+{"name":"Local: Xor_Subsequence","url":"/data/github/Competitive/HackerEarth/June Easy '21/Xor_Subsequence.cpp","tests":[{"id":1622866445410,"input":"1\n5\n3 2 3 1 2","output":"3\n1 2 4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/data/github/Competitive/HackerEarth/June Easy '21/Xor_Subsequence.cpp","group":"local","local":true}
