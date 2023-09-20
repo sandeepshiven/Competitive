@@ -23,6 +23,7 @@ class Solution
         if(n <= 1){
             return;
         }
+        // as insertion sort starts from i=1 and go from right to left in second loop so we need to bring j=1;
         insertionSort(arr, n-1);
         int j = n-1;
         while(j>0 && (arr[j-1] > arr[j])){

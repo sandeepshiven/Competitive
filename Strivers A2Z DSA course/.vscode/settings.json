@@ -2,5 +2,10 @@
     "files.associations": {
         "*.ejs": "html",
         "ostream": "cpp"
-    }
+    },
+    "java.project.sourcePaths": [
+        "1. Learn The Basics/1.6. Know Basic Hasing",
+        "1. Learn The Basics/1.5. Know Basic Recursion",
+        "2. Learn Important Sorting Techniques/2.2. Sorting-II"
+    ]
 }

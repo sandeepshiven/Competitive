@@ -52,7 +52,7 @@ public:
         
         long long res=0;
         for(int i=1; i<=n; i++){
-            res += (n/i);
+            res += (i*(n/i));
         }
         return res;
 

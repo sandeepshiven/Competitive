@@ -27,7 +27,7 @@ class Solution
         if(n <= 0){
             return;
         }
-        bool flag = true;
+        bool flag = true; // used to check if there is a swap if no swap then array is sorted
         for(int i=0; i<n-1; i++){
             if(arr[i+1] < arr[i]){
                 swap(arr[i+1], arr[i]);
