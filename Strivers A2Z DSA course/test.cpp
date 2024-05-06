@@ -1,7 +1,7 @@
 
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
+// #pragma GCC optimize("Ofast")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+// #pragma GCC optimize("unroll-loops")
 //#pragma GCC target("avx,avx2,fma")
 
 #include <bits/stdc++.h>
@@ -198,6 +198,18 @@ void testcase(){
     
 }
 
+class A{
+    public: virtual void a() =0;
+    A(){
+        cout << "A ";
+    }
+};
+
+class B: public A{
+    public: B(){
+        cout << "B ";
+    }
+};
 
 signed main(){
 
@@ -214,7 +226,10 @@ signed main(){
        
    // while(t--){
         
-        testcase();
+        // testcase();
+        
+        A *a = new B();
+        
 		
 
     //}
