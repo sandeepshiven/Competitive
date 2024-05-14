@@ -228,7 +228,14 @@ signed main(){
         
         // testcase();
         
-        A *a = new B();
+    int n;
+    cin >> n;
+    vector<int>primes(n);
+    for(int i=0; i<n; i++){
+        cin >> primes[i];
+    }
+
+    vector<vector<int>> pairs;
         
 		
 
