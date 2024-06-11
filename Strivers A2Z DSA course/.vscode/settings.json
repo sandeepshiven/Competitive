@@ -2,7 +2,8 @@
     "files.associations": {
         "*.ejs": "html",
         "ostream": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "vector": "cpp"
     },
     "java.project.sourcePaths": [
         "1. Learn The Basics/1.6. Know Basic Hasing",

@@ -143,74 +143,6 @@ int nCr(int n, int r){
 
 }
 
-void testcase(){
-
-    vector<int> arr;
-    string str;
-    getline(cin, str);
- 
-    stringstream ss(str);
- 
-    while (ss.good()) {
-        string substr;
-        getline(ss, substr, ',');
-        arr.push_back(stoi(substr));
-    }
-
-    vector<int>res;
-    vector<int>sums;
-    for(auto x: arr){
-        int s = 0;
-        for(int i=2; i<=x/2; i++){
-            if(x%i == 0){
-                s += i;
-            }
-        }
-        if(x != 1){
-            s++;
-        }
-        sums.push_back(s);
-    }
-
-    bool flag = false;
-    for(auto x: arr){
-        if(find(sums.begin(), sums.end(), x) != sums.end()){
-            flag = true;
-            res.push_back(x);
-        }
-    }
-    if(flag){
-        for(int i=0; i<(int)res.size(); i++){
-            if(i != (int)res.size() -1){
-                cout << res[i] << ',';
-            }
-            else{
-                cout<< res[i];
-            }
-            
-        }
-    }
-    else{
-        cout << -1;
-    }
-    
-   
-    
-}
-
-class A{
-    public: virtual void a() =0;
-    A(){
-        cout << "A ";
-    }
-};
-
-class B: public A{
-    public: B(){
-        cout << "B ";
-    }
-};
-
 long long calculatePower(int x, int n){
 
     long long ans = 1;
@@ -232,6 +164,53 @@ long long calculatePower(int x, int n){
 
 }
 
+bool isArrangement(vector<int>&stalls, int dist, int cows){
+
+    int cowCount=1, lastCow = stalls[0];
+    for(auto i: stalls){
+        // we should maintain this as a least distance
+        if(i - lastCow >= dist){
+            cowCount++;
+            lastCow = i;
+        }
+    }
+    return cowCount >= cows;
+}
+
+void testcase(){
+
+    int n, c;
+    cin >> n >> c;
+    vector<int> stalls(n);
+
+    for(int i =0; i<n; i++){
+        cin >> stalls[i];
+    }
+    sort(stalls.begin(), stalls.end());
+
+    int low = 1, high = stalls[n-1] - stalls[0], ans;
+    
+    while(low <= high){
+
+        int mid = low + (high - low)/2;
+        // checking if the arragment is possible
+        if(isArrangement(stalls, mid, c)){
+            ans = mid;
+            low = mid + 1;
+        }
+        else{
+            high = mid -1;
+        }
+
+    }
+    cout << ans << "\n";
+   
+    
+}
+
+
+
+
 signed main(){
 
     ios_base::sync_with_stdio(false);
@@ -242,16 +221,17 @@ signed main(){
     int t;
     
     
-    //cin >> t;
+    cin >> t;
 
        
-   // while(t--){
+   while(t--){
         
-        // testcase();
+        testcase();
+   }
         
-    int n,x;
-    cin >> x >> n;
-    cout << calculatePower(x, n);
+    // int n,x;
+    // cin >> x >> n;
+    // cout << calculatePower(x, n);
         
 		
 
