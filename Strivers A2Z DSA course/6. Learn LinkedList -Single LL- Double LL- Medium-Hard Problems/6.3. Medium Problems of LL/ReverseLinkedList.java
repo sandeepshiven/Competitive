@@ -60,9 +60,7 @@ class Solution {
             prev = head;
             head = temp;
         }
-
         return prev;
-
     }
 
     public ListNode helper(ListNode node, ListNode prev){
@@ -94,7 +92,7 @@ class Solution {
             return head;
         }
         
-        ListNode newHead = reverseList(head.next);
+        ListNode newHead = reverseListRecursive2(head.next);
         ListNode front = head.next;
         
         front.next = head;

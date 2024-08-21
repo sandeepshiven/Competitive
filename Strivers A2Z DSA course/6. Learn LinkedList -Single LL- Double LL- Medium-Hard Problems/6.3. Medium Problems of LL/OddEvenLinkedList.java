@@ -28,7 +28,7 @@ https://leetcode.com/problems/odd-even-linked-list/description/
  * 
  */
 
-  public class ListNode {
+  class ListNode {
       int val;
       ListNode next;
       ListNode() {}
@@ -48,8 +48,16 @@ class Solution {
         ListNode evenMover = evenHead;
         ListNode oddMover = oddHead;
 
-        while
+        while(oddMover.next != null && evenMover.next != null){
+            ListNode evenTemp = evenMover.next.next; 
+            ListNode oddTemp = oddMover.next.next;
+            oddMover.next = oddTemp;
+            evenMover.next = evenTemp; 
+            evenMover = evenTemp;
+            oddMover = oddTemp;
+        }
+        oddMover.next = evenHead;
         
-        return head;
+        return oddHead;
     }
 }
